@@ -1,4 +1,4 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, StatusBar } from "react-native";
 import { Tabs } from "expo-router";
 import { icons } from "../../constants";
 
@@ -61,6 +61,22 @@ const TabsLayout = () => {
         />
 
         <Tabs.Screen
+          name="arisan"
+          options={{
+            title: "Arisan",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.arisan}
+                color={color}
+                name="Arisan"
+                focused={focused}
+              />
+            ),
+          }}
+        />
+
+        <Tabs.Screen
           name="hierarchy"
           options={{
             title: "Hierarchy",
@@ -74,6 +90,22 @@ const TabsLayout = () => {
                   focused={focused}
                 />
               </View>
+            ),
+          }}
+        />
+
+        <Tabs.Screen
+          name="donasi"
+          options={{
+            title: "Donasi",
+            headerShown: false,
+            tabBarIcon: ({ color, focused }) => (
+              <TabIcon
+                icon={icons.donasi}
+                color={color}
+                name="Donasi"
+                focused={focused}
+              />
             ),
           }}
         />
@@ -94,6 +126,7 @@ const TabsLayout = () => {
           }}
         />
       </Tabs>
+      <StatusBar style="light" className="bg-third-100" />
     </>
   );
 };
